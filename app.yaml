@@ -1,0 +1,15 @@
+# [START app_yaml]
+runtime: nodejs20
+
+service: jewellplus-admin
+
+entrypoint: npm run build && npm run start
+
+env_variables:
+  NODE_ENV: "production"
+
+handlers:
+  - url: /.*
+    secure: always
+    script: auto
+# [END app_yaml]
